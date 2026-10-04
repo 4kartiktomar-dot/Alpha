@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha IT and Information Services | Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #10b981;
+      --dark: #0f172a;
+      --slate: #475569;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo span {
+      color: var(--primary);
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .contact-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #dbeafe;
+      color: var(--primary-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--slate);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .main-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    }
+
+    .main-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--slate);
+      font-size: 0.95rem;
+    }
+
+    .feature-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .highlight-card {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 3rem 1.5rem;
+      text-align: center;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-card p {
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .telegram-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin: 0.3rem;
+      font-family: monospace;
+      color: #38bdf8;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--slate);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar with Contact Us CTA -->
+  <header>
+    <div class="nav-container">
+      <div class="brand-logo">Alpha <span>IT Services</span></div>
+      <a href="http://t.me/Alpha4Dhv" target="_blank" rel="noopener noreferrer" class="contact-btn">
+        Contact Us
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="badge">We Are Hiring</div>
+    <h1 class="hero-title">Content Manager</h1>
+    <p class="hero-subtitle">
+      Join our growing team and be part of a workplace where your skills and ideas truly matter. Work remotely with transparent payouts in USD.
+    </p>
+    <div class="hero-cta">
+      <a href="http://t.me/Alpha4Dhv" target="_blank" rel="noopener noreferrer" class="main-btn">
+        Apply / Contact on Telegram
+      </a>
+    </div>
+  </section>
+
+  <!-- Job Details Cards -->
+  <section class="features-container">
+    <div class="feature-card">
+      <h3>Key Details</h3>
+      <ul class="feature-list">
+        <li><strong>Role:</strong> Content Manager</li>
+        <li><strong>Location:</strong> Work From Home (Remote)</li>
+        <li><strong>Experience:</strong> No experience needed</li>
+        <li><strong>Eligibility:</strong> Male and Female both can apply</li>
+        <li><strong>Qualification:</strong> Any Graduation Degree with 50%</li>
+        <li><strong>Age:</strong> 18 – 40 years</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h3>Payout & Benefits</h3>
+      <ul class="feature-list">
+        <li><strong>Joining Fee:</strong> $0 (No Joining Fee)</li>
+        <li><strong>Earnings:</strong> Paid in USD based on incentive</li>
+        <li><strong>Star Performance:</strong> Up to $1800+ achieved</li>
+        <li><strong>Hours:</strong> 6 to 8 hours/day only</li>
+        <li><strong>Flexibility:</strong> 24-hour shift options available</li>
+        <li><strong>Transparency:</strong> Trace your earnings accurately</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h3>System Requirements</h3>
+      <ul class="feature-list">
+        <li>Personal PC or Laptop</li>
+        <li>Stable, high-speed Internet connection</li>
+        <li>Minimum 3 days initial training</li>
+        <li>Professional decorum & clear team coordination</li>
+        <li>Flexible leaves (notify 1 hour before shift)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section class="highlight-card">
+    <h3>Ready to Get Started?</h3>
+    <p>Reach out directly to our hiring team on Telegram to begin your onboarding and training.</p>
+    <div style="margin-bottom: 1.5rem;">
+      <span class="telegram-tag">@Alpha4Dhv</span>
+      <span class="telegram-tag">@Alpha4Admin</span>
+    </div>
+    <a href="http://t.me/Alpha4Dhv" target="_blank" rel="noopener noreferrer" class="main-btn" style="background: #38bdf8; color: #0f172a;">
+      Connect With Us Now
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; Alpha IT and Information Services. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
